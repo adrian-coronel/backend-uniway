@@ -1,0 +1,45 @@
+// .eslintrc.json
+
+{
+  // Configuración del entorno donde se ejecutará el código
+  "env": {
+    "commonjs": true, // Habilita las variables globales comunes de CommonJS
+    "es2022": true,   // Habilita las características de ES2022
+    "node": true      // Habilita las variables globales y las funciones de Node.js
+  },
+
+  // Extensiones de configuración que se utilizan como base
+  "extends": [
+    "eslint:recommended", // Utiliza las reglas recomendadas por ESLint
+    "plugin:@typescript-eslint/recommended", // Utiliza las reglas recomendadas de TypeScript por ESLint
+    "plugin:@typescript-eslint/recommended-requiring-type-checking" // Utiliza las reglas recomendadas de TypeScript que requieren comprobación de tipos
+  ],
+
+  // Patrones de archivos a ignorar durante la verificación
+  "ignorePatterns": ["dist/**/*"],
+
+  // Configuraciones que se aplican a archivos específicos o grupos de archivos
+  "overrides": [],
+
+  // Especifica el analizador de JavaScript / TypeScript que se utilizará
+  "parser": "@typescript-eslint/parser",
+
+  // Opciones del analizador de JavaScript / TypeScript
+  "parserOptions": {
+    "ecmaVersion": "latest", // Versión de ECMAScript utilizada en el proyecto
+    "project": true,          // Habilita la lectura de la configuración del proyecto TypeScript
+    "tsconfigRootDir": "__dirname" // Directorio raíz del archivo tsconfig.json
+  },
+
+  // Plugins adicionales utilizados en la configuración
+  "plugins": ["@typescript-eslint"],
+
+  // Indica que este archivo es el archivo raíz de la configuración
+  "root": true,
+
+  // Reglas personalizadas o sobreescritura de reglas existentes
+  "rules": {
+    "semi": ["error", "always"], // Regla personalizada para el punto y coma
+    "quotes": ["error", "double"] // Regla personalizada para comillas dobles
+  }
+}
